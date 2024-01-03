@@ -1,0 +1,15 @@
+;
+;       sri.ies.
+;
+$TTL    86400
+@               IN  SOA ns.sri.ies. vagrant.sri.ies. (
+                1       ; Serial
+                3600    ; Refresh
+                1800    ; Retry
+                604800  ; Expire
+                7200 )  ; Negative Cache TTL
+;
+@                       IN      NS      ns.sri.ies.
+ns.sri.ies.             IN      A       192.168.57.10
+mirror.sri.ies.         IN      A       192.168.57.20
+ftp.sri.ies.            IN      A       192.168.57.30
