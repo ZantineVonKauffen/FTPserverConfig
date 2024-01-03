@@ -7,6 +7,7 @@ sudo apt -y install vsftpd dos2unix
 #Directory and User setup
 #If the following adding of users doesnt work, consider adding them manually. In case it works but passwords are wrong, use:
 #sudo passwd laura | charles to change their passwords to 1234 as required
+#Check user password is right by using sudo - laura | charles to try to do something as them
 sudo useradd -m -p 1234 laura
 sudo useradd -m -p 1234 charles
 sudo mkdir /srv/ftp/chrooted
@@ -28,7 +29,7 @@ sudo cp /vagrant/FTP/vsftpd.chroot_list /etc
 sudo cp /vagrant/FTP/vsftpd.userlist /etc
 sudo cp /vagrant/multihost@.service /lib/systemd/system/
 
-#File formatting
+#File formatting so that the files are correctly read by Linux
 sudo dos2unix /etc/vsftpd/ftp.conf /etc/vsftpd/mirror.conf
 
 #Daemon configuration
